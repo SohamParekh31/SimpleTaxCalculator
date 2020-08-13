@@ -13,7 +13,7 @@ namespace SimpleTaxCalculator
             
 
             TaxCalculator taxCalculator = new TaxCalculator(ageInput,salaryInput);
-            taxCalculator.CalculateSalary();
+            taxCalculator.CalculateTax();
         }
     }
 }

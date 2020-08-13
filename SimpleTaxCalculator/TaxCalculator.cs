@@ -8,15 +8,15 @@ namespace SimpleTaxCalculator
     {
         #region Variables
 
-        private int fixedTaxBetween5Lto10L = 12500;
-        private int fixedTaxAbove10L = 112500;
+        private int _fixedTaxBetween5Lto10L = 12500;
+        private int _fixedTaxAbove10L = 112500;
 
-        private int fixedTaxSeniorCitizenBetween5Lto10L = 10000;
-        private int fixedTaxSeniorCitizenAbove10L = 110000;
+        private int _fixedTaxSeniorCitizenBetween5Lto10L = 10000;
+        private int _fixedTaxSeniorCitizenAbove10L = 110000;
 
-        private int fixedTaxVerySeniorCitizenAbove10L = 100000;
+        private int _fixedTaxVerySeniorCitizenAbove10L = 100000;
 
-        private int calculateTax;
+        private int _taxAmount;
 
         #endregion
 
@@ -38,7 +38,7 @@ namespace SimpleTaxCalculator
         #endregion
 
         #region Methods
-        public void CalculateSalary()
+        public void CalculateTax()
          {
            
             if (Age < 60 && Salary <= 250000)
@@ -48,20 +48,20 @@ namespace SimpleTaxCalculator
             else if(Age < 60 && (Salary > 250001 && Salary <= 500000))
             {
                 int sal = Salary - 250000;
-                calculateTax = ((sal * 5) / 100);
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 5) / 100);
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if (Age < 60 && (Salary > 500001 && Salary <= 1000000))
             {
                 int sal = Salary - 500000;
-                calculateTax = ((sal * 20) / 100) + fixedTaxBetween5Lto10L;
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 20) / 100) + _fixedTaxBetween5Lto10L;
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if (Age < 60 && Salary > 1000001 )
             {
                 int sal = Salary - 1000000;
-                calculateTax = ((sal * 30) / 100) + fixedTaxAbove10L;
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 30) / 100) + _fixedTaxAbove10L;
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if ((Age > 60 && Age < 80) && Salary <= 300000)
             {
@@ -70,20 +70,20 @@ namespace SimpleTaxCalculator
             else if ((Age > 60 && Age < 80) && (Salary > 300001 && Salary <= 500000))
             {
                 int sal = Salary - 300000;
-                calculateTax = ((sal * 5) / 100);
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 5) / 100);
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if ((Age > 60 && Age < 80) && (Salary > 500001 && Salary <= 1000000))
             {
                 int sal = Salary - 500000;
-                calculateTax = ((sal * 20) / 100) + fixedTaxSeniorCitizenBetween5Lto10L;
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 20) / 100) + _fixedTaxSeniorCitizenBetween5Lto10L;
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if ((Age > 60 && Age < 80) && Salary > 1000001)
             {
                 int sal = Salary - 1000000;
-                calculateTax = ((sal * 30) / 100) + fixedTaxSeniorCitizenAbove10L;
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 30) / 100) + _fixedTaxSeniorCitizenAbove10L;
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if (Age >= 80 && Salary <= 500000)
             {
@@ -92,14 +92,14 @@ namespace SimpleTaxCalculator
             else if (Age >= 80 && (Salary > 500001 && Salary <= 1000000))
             {
                 int sal = Salary - 500000;
-                calculateTax = ((sal * 20) / 100);
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 20) / 100);
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
             else if (Age >= 80 && Salary > 1000001)
             {
                 int sal = Salary - 1000000;
-                calculateTax = ((sal * 30) / 100) + fixedTaxVerySeniorCitizenAbove10L;
-                Console.WriteLine($"Tax to Pay is {calculateTax}!");
+                _taxAmount = ((sal * 30) / 100) + _fixedTaxVerySeniorCitizenAbove10L;
+                Console.WriteLine($"Tax to Pay is {_taxAmount}!");
             }
         }
         #endregion
