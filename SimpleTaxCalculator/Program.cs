@@ -10,8 +10,7 @@ namespace SimpleTaxCalculator
             int ageInput = Convert.ToInt32(Console.ReadLine());
             Console.Write("Enter Salary :");
             int salaryInput = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine(ageInput);
-            //Console.WriteLine(salaryInput);
+            
 
             TaxCalculator taxCalculator = new TaxCalculator(ageInput,salaryInput);
             taxCalculator.CalculateSalary();
