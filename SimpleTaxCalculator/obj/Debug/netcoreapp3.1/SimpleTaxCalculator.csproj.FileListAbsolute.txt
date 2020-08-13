@@ -1,0 +1,13 @@
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.csprojAssemblyReference.cache
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.AssemblyInfoInputs.cache
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.AssemblyInfo.cs
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.csproj.CoreCompileInputs.cache
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\bin\Debug\netcoreapp3.1\SimpleTaxCalculator.exe
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\bin\Debug\netcoreapp3.1\SimpleTaxCalculator.deps.json
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\bin\Debug\netcoreapp3.1\SimpleTaxCalculator.runtimeconfig.json
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\bin\Debug\netcoreapp3.1\SimpleTaxCalculator.runtimeconfig.dev.json
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\bin\Debug\netcoreapp3.1\SimpleTaxCalculator.dll
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\bin\Debug\netcoreapp3.1\SimpleTaxCalculator.pdb
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.dll
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.pdb
+D:\CSharp\SimpleTaxCalculator\SimpleTaxCalculator\obj\Debug\netcoreapp3.1\SimpleTaxCalculator.genruntimeconfig.cache

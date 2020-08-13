@@ -6,7 +6,15 @@ namespace SimpleTaxCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Write("Enter Age :");
+            int ageInput = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter Salary :");
+            int salaryInput = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine(ageInput);
+            //Console.WriteLine(salaryInput);
+
+            TaxCalculator taxCalculator = new TaxCalculator(ageInput,salaryInput);
+            taxCalculator.CalculateSalary();
         }
     }
 }
