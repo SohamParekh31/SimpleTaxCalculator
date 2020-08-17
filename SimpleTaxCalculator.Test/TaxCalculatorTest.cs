@@ -9,6 +9,16 @@ namespace SimpleTaxCalculator.Test
         TaxCalculator taxCalculator;
 
         [TestMethod]
+        public void CalculateTax_malefemalenotax()
+        {
+            age = 21;
+            salary = 200000;
+            expected = 0;
+            taxCalculator = new TaxCalculator(age, salary);
+            actual = taxCalculator.CalculateTax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CalculateTax_malefemale2lto5l()
         {
             age = 21;
@@ -39,6 +49,16 @@ namespace SimpleTaxCalculator.Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        public void CalculateTax_SeniorCitizennotax()
+        {
+            age = 61;
+            salary = 250000;
+            expected = 0;
+            taxCalculator = new TaxCalculator(age, salary);
+            actual = taxCalculator.CalculateTax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CalculateTax_SeniorCitizen3lto5l()
         {
             age = 61;
@@ -64,6 +84,16 @@ namespace SimpleTaxCalculator.Test
             age = 61;
             salary = 1200000;
             expected = 170000;
+            taxCalculator = new TaxCalculator(age, salary);
+            actual = taxCalculator.CalculateTax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CalculateTax_VerySeniorCitizennotax()
+        {
+            age = 81;
+            salary = 450000;
+            expected = 0;
             taxCalculator = new TaxCalculator(age, salary);
             actual = taxCalculator.CalculateTax();
             Assert.AreEqual(expected, actual);
