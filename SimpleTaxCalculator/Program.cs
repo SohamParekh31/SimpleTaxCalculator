@@ -2,18 +2,25 @@
 
 namespace SimpleTaxCalculator
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            int ageInput, salaryInput;
+            do
+            {
             Console.Write("Enter Age :");
-            int ageInput = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Salary :");
-            int salaryInput = Convert.ToInt32(Console.ReadLine());
-            
+            ageInput = Convert.ToInt32(Console.ReadLine());
 
+            if(ageInput < 0 || ageInput > 100)
+                Console.WriteLine("Invalid Age!");
+
+            } while (ageInput < 0 || ageInput > 100);
+            Console.Write("Enter Salary :");
+            salaryInput = Convert.ToInt32(Console.ReadLine());
             TaxCalculator taxCalculator = new TaxCalculator(ageInput,salaryInput);
-            taxCalculator.CalculateTax();
+            Console.WriteLine();
+            Console.WriteLine($"Tax to Pay {taxCalculator.CalculateTax()}!");
         }
     }
 }
