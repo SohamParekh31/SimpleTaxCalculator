@@ -22,10 +22,10 @@ namespace SimpleTaxCalculator
             Console.Write("Enter Salary :");
             salaryInput = Convert.ToInt32(Console.ReadLine());
             Program p = new Program();
-            p.ValidateData(ageInput, salaryInput);
+            p.DataValidation(ageInput, salaryInput);
 
         }
-        public string ValidateData(int age, int salary)
+        public string DataValidation(int age, int salary)
         {
             if (age <= 0 && salary <= 0)
             {
