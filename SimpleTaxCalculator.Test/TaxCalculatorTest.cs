@@ -7,37 +7,36 @@ namespace SimpleTaxCalculator.Test
     {
         TaxCalculator taxCalculator;
 
-        public string ZeroAgeValue(int age)
-        {
-            if (age == 0)
-                return "Invalid Age";
-            else
-                return age.ToString();
-        }
-        public string ZeroSalaryValue(int salary)
-        {
-            if (salary == 0)
-                return "Invalid Salary";
-            else
-                return salary.ToString();
-        }
-        public string SalaryValueLessthan0(int salary)
-        {
-            if (salary < 0)
-                return "Invalid Salary";
-            else
-                return salary.ToString();
-        }
 
+        [TestMethod]
+        public void CalculateTax_AgeandSalary0()
+        {
+            int age = 0;
+            int salary = 0;
+            string expected = "Invalid Data";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CalculateTax_AgeandSalaryWithNegativeValue()
+        {
+            int age = -25;
+            int salary = -6000000;
+            string expected = "Invalid Data";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
         [TestMethod]
         public void CalculateTax_WhenAge0()
         {
             int age = 0;
             int salary = 200000;
             string expected = "Invalid Age";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = ZeroAgeValue(age);
-            Assert.AreEqual(expected, actual);            
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CalculateTax_malefemaleWhenSalary0()
@@ -45,8 +44,8 @@ namespace SimpleTaxCalculator.Test
             int age = 25;
             int salary = 0;
             string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = ZeroSalaryValue(salary);
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
 
@@ -66,18 +65,8 @@ namespace SimpleTaxCalculator.Test
             int age = 21;
             int salary = -200000;
             string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = SalaryValueLessthan0(salary);
-            Assert.AreEqual(expected, actual);
-        }
-        [TestMethod]
-        public void CalculateTax_malefemale2lto5lWithNegativeSalaryValue()
-        {
-            int age = 21;
-            int salary = -200000;
-            string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = SalaryValueLessthan0(salary);
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -88,6 +77,16 @@ namespace SimpleTaxCalculator.Test
             int expected = 2500;
             taxCalculator = new TaxCalculator(age, salary);
             int actual = taxCalculator.CalculateTax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CalculateTax_malefemale2lto5lWithNegativeSalaryValue()
+        {
+            int age = 21;
+            int salary = -200000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -106,8 +105,8 @@ namespace SimpleTaxCalculator.Test
             int age = 21;
             int salary = -600000;
             string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = SalaryValueLessthan0(salary);
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -126,8 +125,8 @@ namespace SimpleTaxCalculator.Test
             int age = 21;
             int salary = -1100000;
             string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = SalaryValueLessthan0(salary);
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -136,8 +135,8 @@ namespace SimpleTaxCalculator.Test
             int age = 61;
             int salary = 0;
             string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = ZeroSalaryValue(salary);
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -151,6 +150,16 @@ namespace SimpleTaxCalculator.Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        public void CalculateTax_SeniorCitizenNoTaxWithNegativeSalaryValue()
+        {
+            int age = 61;
+            int salary = -250000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CalculateTax_SeniorCitizen3lto5l()
         {
             int age = 61;
@@ -158,6 +167,16 @@ namespace SimpleTaxCalculator.Test
             int expected = 2500;
             taxCalculator = new TaxCalculator(age, salary);
             int actual = taxCalculator.CalculateTax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CalculateTax_SeniorCitizen3lto5lWithNegativeValue()
+        {
+            int age = 61;
+            int salary = -350000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -171,6 +190,16 @@ namespace SimpleTaxCalculator.Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        public void CalculateTax_SeniorCitizen5lto10lWithNegativeValue()
+        {
+            int age = 61;
+            int salary = -700000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CalculateTax_SeniorCitizenAbove10l()
         {
             int age = 61;
@@ -181,13 +210,23 @@ namespace SimpleTaxCalculator.Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        public void CalculateTax_SeniorCitizenAbove10lWithNegativeValue()
+        {
+            int age = 61;
+            int salary = -1200000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CalculateTax_VerySeniorCitizenWhenSalary0()
         {
             int age = 81;
             int salary = 0;
             string expected = "Invalid Salary";
-            taxCalculator = new TaxCalculator(age, salary);
-            string actual = ZeroSalaryValue(salary);
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -201,6 +240,16 @@ namespace SimpleTaxCalculator.Test
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
+        public void CalculateTax_VerySeniorCitizennotaxWithNegativeValue()
+        {
+            int age = 81;
+            int salary = -450000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
         public void CalculateTax_VerySeniorCitizen5lto10l()
         {
             int age = 85;
@@ -208,6 +257,16 @@ namespace SimpleTaxCalculator.Test
             int expected = 40000;
             taxCalculator = new TaxCalculator(age, salary);
             int actual = taxCalculator.CalculateTax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void CalculateTax_VerySeniorCitizen5lto10lWithNegativeValue()
+        {
+            int age = 81;
+            int salary = -700000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
@@ -220,6 +279,15 @@ namespace SimpleTaxCalculator.Test
             int actual = taxCalculator.CalculateTax();
             Assert.AreEqual(expected, actual);
         }
-        
+        [TestMethod]
+        public void CalculateTax_VerySeniorCitizenAbove10lWithNegativeValue()
+        {
+            int age = 81;
+            int salary = -1200000;
+            string expected = "Invalid Salary";
+            Program p = new Program(age, salary);
+            string actual = p.ValidateData(age, salary);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

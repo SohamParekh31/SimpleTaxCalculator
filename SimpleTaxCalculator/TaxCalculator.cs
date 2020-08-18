@@ -29,26 +29,27 @@ namespace SimpleTaxCalculator
 
         #region Constructor
 
-        public TaxCalculator(int age,int salary)
+        public TaxCalculator(int age, int salary)
         {
             this._age = age;
             this._salary = salary;
+
         }
 
         #endregion
 
-        
+
 
         #region Methods
 
         public int CalculateTax()
-         {
-           
+        {
+
             if (_age < 60 && _salary <= 250000)
             {
                 _taxAmount = 0;
             }
-            else if(_age < 60 && (_salary > 250001 && _salary <= 500000))
+            else if (_age < 60 && (_salary > 250001 && _salary <= 500000))
             {
                 int sal = _salary - 250000;
                 _taxAmount = ((sal * 5) / 100);
@@ -58,7 +59,7 @@ namespace SimpleTaxCalculator
                 int sal = _salary - 500000;
                 _taxAmount = ((sal * 20) / 100) + _fixedTaxBetween5Lto10L;
             }
-            else if (_age < 60 && _salary > 1000001 )
+            else if (_age < 60 && _salary > 1000001)
             {
                 int sal = _salary - 1000000;
                 _taxAmount = ((sal * 30) / 100) + _fixedTaxAbove10L;
