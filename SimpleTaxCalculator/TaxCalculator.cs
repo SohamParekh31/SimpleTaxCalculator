@@ -29,13 +29,15 @@ namespace SimpleTaxCalculator
 
         #region Constructor
 
-        public TaxCalculator(int _age,int _salary)
+        public TaxCalculator(int age,int salary)
         {
-            this._age = _age;
-            this._salary = _salary;
+            this._age = age;
+            this._salary = salary;
         }
 
         #endregion
+
+        
 
         #region Methods
 
